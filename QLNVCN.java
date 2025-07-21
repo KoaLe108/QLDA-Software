@@ -22,14 +22,11 @@ public class PersonalTaskManagerViolations {
     private static JSONArray loadTasksFromDb() {
         JSONParser parser = new JSONParser();
         try (FileReader reader = new FileReader(DB_FILE_PATH)) {
-            Object obj = parser.parse(reader);
-            if (obj instanceof JSONArray) {
-                return (JSONArray) obj;
-            }
-        } catch (IOException | ParseException e) {
-            System.err.println("Lỗi khi đọc file database: " + e.getMessage());
+            Object obj = new JSONParser().parse(reader);
+            return (JSONArray) obj;
+        } catch (Exception e) {
+            return new JSONArray();
         }
-        return new JSONArray();
     }
 
     // Phương thức trợ giúp để lưu dữ liệu
