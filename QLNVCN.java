@@ -97,7 +97,9 @@ public class PersonalTaskManagerViolations {
             }
         }
 
-        String taskId = UUID.randomUUID().toString(); // YAGNI: Có thể dùng số nguyên tăng dần đơn giản hơn.
+        // Giả sử bạn dùng biến đếm đơn giản thay vì UUID
+        String taskId = String.valueOf(System.currentTimeMillis()); // hoặc dùng int tăng dần nếu quản lý được
+
 
         JSONObject newTask = new JSONObject();
         newTask.put("id", taskId);
