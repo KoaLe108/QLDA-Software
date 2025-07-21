@@ -101,7 +101,7 @@ public class PersonalTaskManagerViolations {
         newTask.put("due_date", dueDate.format(DATE_FORMATTER));
         newTask.put("priority", priorityLevel);
         newTask.put("status", "Chưa hoàn thành");
-        newTask.put("created_at", LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
+        newTask.put("created_at", LocalDate.now().format(DATE_FORMATTER));
         newTask.put("last_updated_at", LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         newTask.put("is_recurring", isRecurring); // YAGNI: Thêm thuộc tính này dù chưa có chức năng xử lý nhiệm vụ lặp lại
 
